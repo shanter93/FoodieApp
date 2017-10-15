@@ -1,7 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
 
-import { HomeComponent } from './components/home/home.component';
+import { HotelListComponent } from './components/hotel-list/hotel-list.component';
 import { AboutComponent } from './components/about/about.component';
 
 import { HomePage } from './pages/home/home.page';
@@ -13,7 +13,7 @@ import { DataService } from './services/data-service';
 
 @NgModule({
     declarations: [
-        HomeComponent,
+        HotelListComponent,
         AboutComponent,
         
         HomePage,

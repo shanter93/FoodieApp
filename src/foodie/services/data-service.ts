@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import DATA from './data-constant';
+import * as data from './data-constant';
 
 @Injectable()
 export class DataService {
@@ -10,6 +10,10 @@ export class DataService {
     }
 
     getData() {
-        return DATA;
+        return data.DATA;
+    }
+
+    getCuisineTypes() {
+        return data.CUISINE_TYPES;
     }
 }

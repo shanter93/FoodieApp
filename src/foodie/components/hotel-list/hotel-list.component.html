@@ -1,0 +1,13 @@
+<ion-searchbar (ionInput)="getItems($event)">
+</ion-searchbar>
+<ion-list>
+    <ion-item *ngFor="let hotel of hotels">
+        <ion-thumbnail item-start>
+            <img *ngIf="hotel.icon" [src]="hotel.icon">
+            <img *ngIf="!hotel.icon" src="./assets/logos/no-logo.jpg">
+        </ion-thumbnail>
+        <h2 class="hotel-desc">{{hotel.name}}</h2>
+        <p></p>
+        <ion-badge item-end [ngClass]="hotel.type == 'Veg' ? 'green-badge' : 'red-badge'">{{hotel.type}}</ion-badge>
+    </ion-item>
+</ion-list>

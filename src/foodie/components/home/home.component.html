@@ -1,33 +1,10 @@
-<ion-list>
-    <ion-list-header>
-        Action
-    </ion-list-header>
-    <ion-item>
-        <ion-thumbnail item-start>
-            <img src="img/thumbnail-totoro.png">
-        </ion-thumbnail>
-        <h2>My Neighbor Totoro</h2>
-        <p>Hayao Miyazaki • 1988</p>
-    </ion-item>
-    <ion-item>
-        <ion-thumbnail item-start>
-            <img src="img/thumbnail-totoro.png">
-        </ion-thumbnail>
-        <h2>My Neighbor Totoro</h2>
-        <p>Hayao Miyazaki • 1988</p>
-    </ion-item>
-    <ion-item>
-        <ion-thumbnail item-start>
-            <img src="img/thumbnail-totoro.png">
-        </ion-thumbnail>
-        <h2>My Neighbor Totoro</h2>
-        <p>Hayao Miyazaki • 1988</p>
-    </ion-item>
-    <ion-item>
-        <ion-thumbnail item-start>
-            <img src="img/thumbnail-totoro.png">
-        </ion-thumbnail>
-        <h2>My Neighbor Totoro</h2>
-        <p>Hayao Miyazaki • 1988</p>
-    </ion-item>
-</ion-list>
+<ion-grid>
+    <ion-row>
+        <ion-col col-6 class="card-background-page" *ngFor="let ct of cuisines">
+            <ion-card>
+                <img class="card-image" [src]="ct.imgSrc" />
+                <div class="card-title">{{ct.title}}</div>
+            </ion-card>
+        </ion-col>
+    </ion-row>
+</ion-grid>

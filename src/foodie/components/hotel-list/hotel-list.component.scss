@@ -1,0 +1,17 @@
+hotel-list-component {
+    ion-badge {
+        font-size: 1rem;
+        float: right;
+    }
+    .hotel-desc {
+        white-space: initial;
+    }
+    .red-badge {
+        background-color:  color($colors, danger);
+    }
+
+    .green-badge {
+        background-color:  color($colors, secondary);
+    }
+
+}
