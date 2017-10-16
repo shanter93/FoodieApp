@@ -1,6 +1,17 @@
-<ion-searchbar (ionInput)="getItems($event)">
-</ion-searchbar>
-<ion-list>
+<ion-toolbar color="danger">
+    <ion-grid no-padding>
+        <ion-row>
+            <ion-col col-9 align-self-center>
+                <ion-searchbar placeholder="Search for Hotels" (ionInput)="getItems($event)">
+                </ion-searchbar>
+            </ion-col>
+            <ion-col align-self-center>
+                <button class="center" clear ion-button color="light" (click)="presentPopover($event)">filter</button>
+            </ion-col >
+        </ion-row>
+    </ion-grid>
+</ion-toolbar>
+<ion-list *ngIf="hotels.length">
     <ion-item *ngFor="let hotel of hotels">
         <ion-thumbnail item-start>
             <img *ngIf="hotel.icon" [src]="hotel.icon">
@@ -8,6 +19,11 @@
         </ion-thumbnail>
         <h2 class="hotel-desc">{{hotel.name}}</h2>
         <p></p>
-        <ion-badge item-end [ngClass]="hotel.type == 'Veg' ? 'green-badge' : 'red-badge'">{{hotel.type}}</ion-badge>
+        <ion-badge item-end [ngClass]="hotel.type == 'T1' ? 'green-badge' : 'red-badge'">{{hotel.type == 'T1'? 'Veg' : "Non-Veg"}}</ion-badge>
     </ion-item>
 </ion-list>
+<ion-card *ngIf="!hotels.length">
+    <ion-card-header class="center">
+        No Hotels Available  <ion-icon name="sad"></ion-icon>
+    </ion-card-header>
+</ion-card>

@@ -16,4 +16,12 @@ export class DataService {
     getCuisineTypes() {
         return data.CUISINE_TYPES;
     }
+
+    getClassTypes() {
+        return data.CLASS_TYPES;
+    }
+
+    getTypes() {
+        return data.TYPES;
+    }
 }

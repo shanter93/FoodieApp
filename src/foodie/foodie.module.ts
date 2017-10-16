@@ -1,6 +1,8 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
 
+import { FilterPage } from './pages/filter/filter.page';
+
 import { HotelListComponent } from './components/hotel-list/hotel-list.component';
 import { AboutComponent } from './components/about/about.component';
 
@@ -13,6 +15,7 @@ import { DataService } from './services/data-service';
 
 @NgModule({
     declarations: [
+        FilterPage,
         HotelListComponent,
         AboutComponent,
         
@@ -25,9 +28,10 @@ import { DataService } from './services/data-service';
         IonicModule
     ],
     entryComponents: [
+        FilterPage,
         TabsPage,
         HomePage,
-        AboutPage
+        AboutPage,
     ],
     providers: [
         DataService

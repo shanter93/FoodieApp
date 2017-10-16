@@ -14,4 +14,9 @@ hotel-list-component {
         background-color:  color($colors, secondary);
     }
 
+    .center{
+        display: table;
+        margin: 0 auto;
+    }
+
 }

@@ -1,0 +1,50 @@
+<ion-grid>
+    <ion-row>
+        <ion-col col-8>
+            <ion-title class="title-text">Filters</ion-title>
+        </ion-col>
+        <ion-col col-4>
+            <button ion-button clear (click)="clearAllFilters()">Clear</button>
+        </ion-col>
+    </ion-row>
+</ion-grid>
+<ion-item-group>
+    <ion-item-divider color="light" (click)="toggleClass()">Class
+        <ion-icon item-end name="ios-arrow-down" *ngIf="!showClasses"></ion-icon>
+        <ion-icon item-end name="ios-arrow-up" *ngIf="showClasses"></ion-icon>
+    </ion-item-divider>
+    <ng-container *ngIf="showClasses">
+        <ion-item *ngFor="let each of classes">
+            <ion-label>{{each.title}}</ion-label>
+            <ion-checkbox [(ngModel)]="each.selected" item-end color="dark"
+             [checked]="each.selected" (ionChange)="updateSelectedClass(each)"></ion-checkbox>
+        </ion-item>
+    </ng-container>
+</ion-item-group>
+<ion-item-group>
+    <ion-item-divider color="light" (click)="toggleTypes()">Type
+        <ion-icon item-end name="ios-arrow-down" *ngIf="!showTypes"></ion-icon>
+        <ion-icon item-end name="ios-arrow-up" *ngIf="showTypes"></ion-icon>
+    </ion-item-divider>
+    <ng-container *ngIf="showTypes">
+        <ion-item *ngFor="let each of types">
+            <ion-label>{{each.title}}</ion-label>
+            <ion-checkbox [(ngModel)]="each.selected" item-end color="dark"
+             [checked]="each.selected"  (ionChange)="updateSelectedType(each)"></ion-checkbox>
+        </ion-item>
+    </ng-container>
+</ion-item-group>
+<ion-item-group>
+    <ion-item-divider color="light" (click)="toggleCuisines()">Cuisines
+        <ion-icon item-end name="ios-arrow-down" *ngIf="!showCuisines"></ion-icon>
+        <ion-icon item-end name="ios-arrow-up" *ngIf="showCuisines"></ion-icon>
+    </ion-item-divider>
+    <ng-container *ngIf="showCuisines">
+        <ion-item *ngFor="let each of cuisines">
+            <ion-label>{{each.title}}</ion-label>
+            <ion-checkbox [(ngModel)]="each.selected" item-end color="dark"
+             [checked]="each.selected"  (ionChange)="updateSelectedCuisines(each)"></ion-checkbox>
+        </ion-item>
+    </ng-container>
+</ion-item-group>
+<button class="center" ion-button round block (click)="filterData()">Filter</button>
